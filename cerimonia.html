@@ -12,7 +12,11 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		
+		<style>
+		    #map{
+			    height:400px;
+			}
+		</style>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -51,7 +55,7 @@
 <!-- Main -->
 				<section id="main" class="container">
 
-					<section class="box special">
+					<section class="box special features">
 						<header class="major">
 							<h2>Cerimonia</h2>
 							<p>La Cerimonia si terrà il giorno 14 Agosto 2016 alle ore 17 presso l'Aurum in Via D'Avalos, angolo Via Luisa D'Annunzio – Pescara</p>
@@ -62,12 +66,15 @@
 
 						</header>
 						<!--span class="image featured"><img src="images/pic01.jpg" alt="" /></span-->
+						<div class="features-row">
+						<div id="map" />
+						</div>
 					</section>
-
-					
 
 				</section>
 
+
+	
 			<!-- CTA -->
 				<section id="cta">
 
@@ -99,6 +106,18 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script src="https://hpneo.github.io/gmaps/gmaps.js"></script>
+			<script>
+			new GMaps({
+			  div: '#map',
+			  lat: 42.453948, 
+			  lng: 14.235768
+			}).addMarker({
+			  lat: 42.453948,
+			  lng: 14.235768,
+			  title: 'Aurum'
+			});;
+			</script>
 	</body>
 </html>

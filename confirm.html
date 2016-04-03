@@ -12,7 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -62,7 +62,7 @@
 
 					<section class="box special features">
 					<div class="box">
-						<form method="post" action="confirm.php">
+						<form id="form_confirm" method="post" action="confirm.php">
 							<div class="row uniform 50%">
 								<div class="6u 12u(mobilep)">
 									<input type="text" name="name" id="name" value="" placeholder="Nome" />
@@ -145,6 +145,32 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+			<script>
+			$('#form_confirm').validate();
+				
+			$( "#email" ).rules( "add", {
+			  required: true,
+			  email: true,
+			  messages: {
+			    required: "Inserisci un indirizzo email",
+				email: "Inserisci un indirizzo email valido"
+			  }
+			});
+			
+			$( "#name" ).rules( "add", {
+			  required: true,
+			  messages: {
+			    required: "Inserisci il tuo nome"
+			  }
+			});
+			
+			$( "#guests" ).rules( "add", {
+			  required: true,
+			  messages: {
+			    required: "Inserisci i nomi degli invitati"
+			  }
+			});
+			</script>
 	</body>
 </html>

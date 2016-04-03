@@ -12,6 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -48,42 +49,65 @@
 					</ul-->
 				</section>
 
-			<!-- Main -->
+<!-- Main -->
 				<section id="main" class="container">
 
 					<section class="box special">
 						<header class="major">
-							<h2>Ci sposiamo!</h2>
-							<p>Grazie a questo portale potrete consultare il programma del nostro matrimonio, confermare la presenza e lasciare i vostri messaggi.</p>
+							<h2>Esclusi</h2>
+							<p>Quel giorno dovrò rimanere a casa...</p>
 						</header>
 						<!--span class="image featured"><img src="images/pic01.jpg" alt="" /></span-->
 					</section>
 
 					<section class="box special features">
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-heart accent2"></span>
-								<h3>Cerimonia</h3>
-								<p>La Cerimonia si terrà il giorno 14 Agosto 2016 alle ore 17 presso l'Aurum in Via D'Avalos, angolo Via Luisa D'Annunzio – Pescara</p>
-							</section>
-							<section>
-								<span class="icon major fa-music accent3"></span>
-								<h3>Festa</h3>
-								<p>Festeggeremo tutti insieme presso l'Agriturismo La Rustica in Contrada Astignano, 13 – Castellana Pianella (PE)</p>
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-glass accent4"></span>
-								<h3>Addio al nubilato</h3>
-								<p>in preparazione... per info: alessandra.mosca@gmail.com</p>
-							</section>
-							<section>
-								<span class="icon major fa-gamepad accent5"></span>
-								<h3>Addio al celibato</h3>
-								<p>in preparazione...</p>
-							</section>
-						</div>
+					<div class="box">
+						<form method="post" action="confirm.php">
+							<div class="row uniform 50%">
+								<div class="6u 12u(mobilep)">
+									<input type="text" name="name" id="name" value="" placeholder="Nome" />
+								</div>
+								<div class="6u 12u(mobilep)">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
+							</div>
+							<div class="row uniform 50%">
+	  							<br>
+								<p>
+								 <input type="radio" name="confirmed" value="true" checked="checked"/>Confermo la mia presenza<br>
+	  							 <input type="radio" name="confirmed" value="false"/>Non potrò essere presente<br>	
+	  							</p> 
+							</div>
+							<div class="row uniform 50%">
+	  							<br>
+								<span>Per chi arriva da fuori:</span><br>
+								<p>
+								 <input type="radio" name="date" value="13" checked="checked"/>Arrivo il 13 Agosto<br>
+	  							 <input type="radio" name="date" value="14"/>Arrivo il 14 Agosto<br>	
+	  							</p> 
+							</div>
+							<div class="row uniform 50%">
+							    <br>
+								<span>Partecipanti:</span>
+								<textarea name="guests" id="guests" placeholder="Nome Cognome" rows="6"></textarea>
+							</div>
+							<div class="row uniform 50%">
+								<br>
+								<span>Messaggio:</span>
+								<textarea name="message" id="message" placeholder="Ciao" rows="6"></textarea>
+							</div>
+							
+				
+							
+							<div class="row uniform">
+								<div class="12u">
+									<ul class="actions align-center">
+										<li><input type="submit" value="Invia Conferma" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
 					</section>
 
 					

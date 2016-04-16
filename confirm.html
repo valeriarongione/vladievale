@@ -12,11 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<style>
-			label.error{
-			   color:red;
-			}
-		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -30,14 +26,15 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">Menu</a>
 								<ul>
-									<li><a href="#">Cerimonia</a></li>
-									<li><a href="#">Festa</a></li>
+									<li><a href="cerimonia.html">Cerimonia</a></li>
+									<li><a href="festa.html">Festa</a></li>
 									<li><a href="#">Addio al nubilato</a></li>
 									<li><a href="#">Addio al celibato</a></li>
 									<li><a href="#">Alloggi</a></li>
+									<li><a href="pictures.html">Foto</a></li>
 									<li><a href="confirm.html">Conferma Presenza</a></li>
 									<li><a href="#">Libro ospiti</a></li>
-									<li><a href="#">Esclusi</a></li>
+									<li><a href="esclusi.html">Esclusi</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -60,61 +57,64 @@
 						<header class="major">
 							<h2>Conferma presenza</h2>
 							<p>Ti chiediamo di confermare con anticipo la tua presenza alla cerimonia, per permetterci di organizzare tutto al meglio.</p>
+						
+						
 						</header>
+					   
+						
+							<form id="form_confirm" method="post" action="confirm.php">
+								<div class="row uniform 50%">
+									<div class="6u 12u(mobilep)">
+										<input type="text" name="name" id="name" value="" placeholder="Nome" />
+									</div>
+									<div class="6u 12u(mobilep)">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+								</div>
+								<div class="row uniform 50%">
+		  							<br>
+									<p>
+									 <input type="radio" name="confirmed" value="true" checked="checked"/>Confermo la mia presenza<br>
+		  							 <input type="radio" name="confirmed" value="false"/>Non potrò essere presente<br>	
+		  							</p> 
+								</div>
+								<div class="row uniform 50%">
+		  							<br>
+									<span>Per chi arriva da fuori:</span><br>
+									<p>
+									 <input type="radio" name="date" value="13" checked="checked"/>Arrivo il 13 Agosto<br>
+		  							 <input type="radio" name="date" value="14"/>Arrivo il 14 Agosto<br>	
+		  							</p> 
+								</div>
+								<div class="row uniform 50%">
+								    <br>
+									<span>Partecipanti:</span>
+									<textarea name="guests" id="guests" placeholder="Nome Cognome" rows="6"></textarea>
+								</div>
+								<div class="row uniform 50%">
+									<br>
+									<span>Messaggio:</span>
+									<textarea name="message" id="message" placeholder="Ciao" rows="6"></textarea>
+								</div>
+								
+					
+								
+								<div class="row uniform">
+									<div class="12u">
+										<ul class="actions align-center">
+											<li><input type="submit" value="Invia Conferma" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+					
+						
+
+
 						<!--span class="image featured"><img src="images/pic01.jpg" alt="" /></span-->
 					</section>
 
-					<section class="box special features">
-					<div class="box">
-						<form id="form_confirm" method="post" action="confirm.php">
-							<div class="row uniform 50%">
-								<div class="6u 12u(mobilep)">
-									<input type="text" name="name" id="name" value="" placeholder="Nome" />
-								</div>
-								<div class="6u 12u(mobilep)">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
-							</div>
-							<div class="row uniform 50%">
-	  							<br>
-								<p>
-								 <input type="radio" name="confirmed" value="true" checked="checked"/>Confermo la mia presenza<br>
-	  							 <input type="radio" name="confirmed" value="false"/>Non potrò essere presente<br>	
-	  							</p> 
-							</div>
-							<div class="row uniform 50%">
-	  							<br>
-								<span>Per chi arriva da fuori:</span><br>
-								<p>
-								 <input type="radio" name="date" value="13" checked="checked"/>Arrivo il 13 Agosto<br>
-	  							 <input type="radio" name="date" value="14"/>Arrivo il 14 Agosto<br>	
-	  							</p> 
-							</div>
-							<div class="row uniform 50%">
-							    <br>
-								<span>Partecipanti:</span>
-								<textarea name="guests" id="guests" placeholder="Nome Cognome" rows="6"></textarea>
-							</div>
-							<div class="row uniform 50%">
-								<br>
-								<span>Messaggio:</span>
-								<textarea name="message" id="message" placeholder="Ciao" rows="6"></textarea>
-							</div>
-							
-				
-							
-							<div class="row uniform">
-								<div class="12u">
-									<ul class="actions align-center">
-										<li><input type="submit" value="Invia Conferma" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</div>
-					</section>
-
-					
+										
 
 				</section>
 
@@ -172,7 +172,7 @@
 			$( "#guests" ).rules( "add", {
 			  required: true,
 			  messages: {
-			    required: "Inserisci i nomi dei partecipanti"
+			    required: "Inserisci i nomi degli invitati"
 			  }
 			});
 			</script>
